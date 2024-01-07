@@ -41,7 +41,7 @@ public class PostEntity extends BaseEntity{
     private List<PostLikeEntity> postLikeEntityList = new ArrayList<>();
 
     // 게시물 사진 없음
-    public static PostEntity toSaveEntity(PostDTO postDTO, UserEntity userEntity) {
+    public PostEntity toSaveEntity(PostDTO postDTO, UserEntity userEntity) {
         PostEntity postEntity = new PostEntity();
         postEntity.setPostId(postDTO.getPostId());
         postEntity.setUserEntity(userEntity);
@@ -53,7 +53,7 @@ public class PostEntity extends BaseEntity{
     }
 
     // 게시물 사진 있음
-    public static PostEntity toSaveFileEntity(PostDTO postDTO, UserEntity userEntity) {
+    public PostEntity toSaveFileEntity(PostDTO postDTO, UserEntity userEntity) {
         PostEntity postEntity = new PostEntity();
         postEntity.setPostId(postDTO.getPostId());
         postEntity.setUserEntity(userEntity);
@@ -63,6 +63,15 @@ public class PostEntity extends BaseEntity{
         return postEntity;
 
     }
+
+//    // 게시물 수정
+//    public PostEntity toUpdateEntity(PostDTO postDTO, UserEntity userEntity) {
+//        PostEntity postEntity = new PostEntity();
+//        postEntity.setPostId(postDTO.getPostId());
+//        postEntity.setPostTitle(postDTO.getPostTitle());
+//        postEntity.setPostContents(postDTO.getPostContents());
+//
+//    }
 
 
 }

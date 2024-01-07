@@ -24,6 +24,9 @@ public class UserEntity {
     private String userName;
 
     @Column
+    private String nickName;
+
+    @Column
     private String email;
 
     @Column
@@ -51,22 +54,24 @@ public class UserEntity {
     private List<ChildCommentLikeEntity> childCommentLikeEntityList = new ArrayList<>();
 
     // 프사 없음
-    public static UserEntity toSaveEntity(UserDTO userDTO) {
+    public UserEntity toSaveEntity(UserDTO userDTO) {
         UserEntity userEntity = new UserEntity();
         userEntity.setUserId(userDTO.getUserId());
         userEntity.setPassword(userDTO.getPassword());
         userEntity.setUserName(userDTO.getUserName());
+        userEntity.setNickName(userDTO.getNickName());
         userEntity.setEmail(userDTO.getEmail());
         userEntity.setFileAttached(0);
         return userEntity;
     }
 
     // 프사 있음
-    public static UserEntity toSaveFileEntity(UserDTO userDTO) {
+    public UserEntity toSaveFileEntity(UserDTO userDTO) {
         UserEntity userEntity = new UserEntity();
         userEntity.setUserId(userDTO.getUserId());
         userEntity.setPassword(userDTO.getPassword());
         userEntity.setUserName(userDTO.getUserName());
+        userEntity.setNickName(userDTO.getNickName());
         userEntity.setEmail(userDTO.getEmail());
         userEntity.setFileAttached(1);  // 파일 있음
         return userEntity;
