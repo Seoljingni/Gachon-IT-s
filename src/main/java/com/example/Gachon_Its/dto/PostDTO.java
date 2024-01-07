@@ -1,11 +1,11 @@
 package com.example.Gachon_Its.dto;
 
 import com.example.Gachon_Its.entity.PostEntity;
-import com.example.Gachon_Its.entity.UserEntity;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Getter
 @Setter
