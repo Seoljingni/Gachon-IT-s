@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>게시글</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="id = ${postEntity.postID}">
+                <td th:text="title = ${postEntity.postTitle}"></td>
+                <td th:text="contents = ${postEntity.postContents}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
