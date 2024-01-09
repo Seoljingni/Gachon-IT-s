@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 public class LoginDTO {
 
-    private String id;
+    private String id; //adsf
     private String pw;
 
     // 수정된 메서드
