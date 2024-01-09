@@ -2,6 +2,7 @@ package com.example.Gachon_Its.entity;
 
 import com.example.Gachon_Its.dto.PostDTO;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "post")
+@AllArgsConstructor
 public class PostEntity extends BaseEntity{
 
     @Id     //pk(primary key)로 지정 , DB의 식별자
@@ -40,8 +42,9 @@ public class PostEntity extends BaseEntity{
     @OneToMany(mappedBy = "postEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<PostLikeEntity> postLikeEntityList = new ArrayList<>();
 
+
     // 게시물 사진 없음
-    public static PostEntity toSaveEntity(PostDTO postDTO, UserEntity userEntity) {
+/*    public static PostEntity toSaveEntity(PostDTO postDTO, UserEntity userEntity) {
         PostEntity postEntity = new PostEntity();
         postEntity.setPostId(postDTO.getPostId());
         postEntity.setUserEntity(userEntity);
@@ -50,10 +53,10 @@ public class PostEntity extends BaseEntity{
         postEntity.setFileAttached(0); //파일 없음
         return postEntity;
 
-    }
+    }*/
 
     // 게시물 사진 있음
-    public static PostEntity toSaveFileEntity(PostDTO postDTO, UserEntity userEntity) {
+/*    public static PostEntity toSaveFileEntity(PostDTO postDTO, UserEntity userEntity) {
         PostEntity postEntity = new PostEntity();
         postEntity.setPostId(postDTO.getPostId());
         postEntity.setUserEntity(userEntity);
@@ -62,7 +65,7 @@ public class PostEntity extends BaseEntity{
         postEntity.setFileAttached(1); //파일 있음
         return postEntity;
 
-    }
+    }*/
 
 
 }
