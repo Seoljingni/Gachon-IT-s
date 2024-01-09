@@ -21,6 +21,8 @@ public class UserDTO {
 
     private String userName;
 
+    private String nickName;
+
     private String email;
 
     private MultipartFile postFile; //save.html에서 controller로 넘어올 때 파일 담는 용도
@@ -37,6 +39,7 @@ public class UserDTO {
         userDTO.setPassword(userEntity.getPassword());
         userDTO.setUserName(userEntity.getUserName());
         userDTO.setEmail(userEntity.getEmail());
+        userDTO.setNickName(userEntity.getNickName());
         if (userEntity.getFileAttached() == 0) {
             userDTO.setFileAttached(0);
         }else{
